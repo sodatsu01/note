@@ -12,10 +12,16 @@ JavaScript関連の学び所感のメモ書き
 - assertと組み合わせて`assert(hogehoge)`とするか`expect(...)`とするのどっちがいいか思案
 
 ## Enzyme
-- `find(selector)`は`shallowObject`,`exists(selector)`は`boolean`を返すので使い分け注意
+- `find(selector)`は`shallowWrapper`,`exists(selector)`は`boolean`を返すので使い分け注意[参考](https://airbnb.io/enzyme/docs/api/ShallowWrapper/find.html)
 
 ## WebPack
 
 ## babel
 - Jestで使うときに.babelrcに`@babel/preset-env`,`@babel/preset-react`を追加した
-  - ↑が必要な理由は要確認
+  - ↑が必要な理由は要確認 [参考](https://qiita.com/sand/items/af2af0766ca00558457d)
+
+## ESLint
+- デフォルトだとdevdependencyのライブラリのimportで怒られる
+  - spec/.eslintrc.jsonに'devDependencies: true'を追加して許してもらった.
+  - 他にも`devDependencies: [import可能としたいファイル名]`とするのもありらしい。
+- テスト系の構文をESLintくんが認識してくれないので、spec.jsファイルの冒頭に`/* eslint-env jest */と書いて認識してもらった
