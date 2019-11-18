@@ -19,6 +19,7 @@ JavaScript関連の学び所感のメモ書き
 ## babel
 - Jestで使うときに.babelrcに`@babel/preset-env`,`@babel/preset-react`を追加した
   - ↑が必要な理由は要確認 [参考](https://qiita.com/sand/items/af2af0766ca00558457d)
+- presetは@org/nameの形式で配布されてるらしい
 
 ## ESLint
 - デフォルトだとdevdependencyのライブラリのimportで怒られる
