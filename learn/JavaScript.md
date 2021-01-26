@@ -27,6 +27,8 @@ JavaScript関連の学び所感のメモ書き
   - spec/.eslintrc.jsonに'devDependencies: true'を追加して許してもらった.
   - 他にも`devDependencies: [import可能としたいファイル名]`とするのもありらしい。
 - テスト系の構文をESLintくんが認識してくれないので、spec.jsファイルの冒頭に`/* eslint-env jest */と書いて認識してもらった
+- air-bnbのルールだとstateを取得して、変数に代入する時には分割代入を強要される
+  - stateの値を使って計算する時、一度分割代入した変数を作って、その後計算するってしたけどいいのかな？
 
 ## Ui-material
 - <Button>タグについて
@@ -57,3 +59,11 @@ JavaScript関連の学び所感のメモ書き
     </WithStyles(ForwardRef(Button))>
   </StartButton>
   ```
+
+### JavaScript
+- bindで関数実行時の`this`を束縛できる[参考](https://foreignkey.toyao.net/archives/763)
+  - `myFunc().bind(myObject)`とすることで、実行時myFuncの中の`this`を`myObject`に固定できる
+- 時間処理を取り扱う関数`setInterval(Function, milliseconds)``setTimeout(Function, milliseconds)`
+- classブロック直下にデータを定義することができない...
+  - babelの`experimental on`にするといけるらしい..
+  - TypeScriptだと宣言できる
